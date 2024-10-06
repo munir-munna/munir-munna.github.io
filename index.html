@@ -1,56 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Munir Soft Zone</title>
-  <link rel="stylesheet" href="public/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Download</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Munir Soft Zone</h1>
-    <p>Download your favorite apps securely</p>
-  </header>
+    <h1>Download Our Apps</h1>
+    <div id="app-list"></div>
 
-  <section class="app-section">
-    <h2>Available Apps</h2>
-    <div class="app-card">
-      <img src="https://via.placeholder.com/150" alt="App Image">
-      <h3>App Name</h3>
-      <p>Description of the app goes here.</p>
-
-      <!-- Password-protected download -->
-      <form id="downloadForm">
-        <label for="password">Enter Password to Download:</label>
-        <input type="password" id="password" required>
-        <button type="submit">Download</button>
-      </form>
-
-      <!-- Hidden download link -->
-      <a href="app-download-link.zip" id="downloadLink" download style="display: none;">Click to download</a>
-    </div>
-  </section>
-  
-  <footer>
-    <p>© 2024 Munir Soft Zone. All Rights Reserved.</p>
-  </footer>
-
-  <script>
-    const downloadForm = document.getElementById('downloadForm');
-    const downloadLink = document.getElementById('downloadLink');
-
-    downloadForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const password = document.getElementById('password').value;
-
-      // Simple password check (replace with your password)
-      if (password === 'your-password') {
-        downloadLink.style.display = 'block';
-        downloadLink.click();
-      } else {
-        alert('Incorrect password');
-      }
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
