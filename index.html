@@ -18,16 +18,39 @@
       <img src="https://via.placeholder.com/150" alt="App Image">
       <h3>App Name</h3>
       <p>Description of the app goes here.</p>
-      <form action="download.html" method="POST">
+
+      <!-- Password-protected download -->
+      <form id="downloadForm">
         <label for="password">Enter Password to Download:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" required>
         <button type="submit">Download</button>
       </form>
+
+      <!-- Hidden download link -->
+      <a href="app-download-link.zip" id="downloadLink" download style="display: none;">Click to download</a>
     </div>
   </section>
   
   <footer>
     <p>© 2024 Munir Soft Zone. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    const downloadForm = document.getElementById('downloadForm');
+    const downloadLink = document.getElementById('downloadLink');
+
+    downloadForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const password = document.getElementById('password').value;
+
+      // Simple password check (replace with your password)
+      if (password === 'your-password') {
+        downloadLink.style.display = 'block';
+        downloadLink.click();
+      } else {
+        alert('Incorrect password');
+      }
+    });
+  </script>
 </body>
 </html>
