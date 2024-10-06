@@ -13,28 +13,60 @@
 
   <section class="admin-form">
     <h2>Upload New App</h2>
-    <form action="/admin" method="POST">
+    <form>
       <label for="app-name">App Name:</label>
-      <input type="text" id="app-name" name="name" required>
+      <input type="text" id="app-name" placeholder="App name" required>
 
       <label for="app-description">Description:</label>
-      <textarea id="app-description" name="description" required></textarea>
+      <textarea id="app-description" placeholder="App description" required></textarea>
 
       <label for="app-link">App Link:</label>
-      <input type="url" id="app-link" name="link" required>
+      <input type="url" id="app-link" placeholder="App download link" required>
 
       <label for="app-image">Image URL:</label>
-      <input type="url" id="app-image" name="image" required>
+      <input type="url" id="app-image" placeholder="App image URL" required>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" placeholder="Password for download" required>
 
-      <button type="submit">Upload App</button>
+      <button type="button" onclick="submitForm()">Generate HTML</button>
     </form>
+
+    <div id="generatedHtml" style="margin-top: 20px;">
+      <h3>Generated HTML</h3>
+      <pre id="htmlOutput"></pre>
+    </div>
   </section>
   
   <footer>
     <p>© 2024 Munir Soft Zone. Admin Panel.</p>
   </footer>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById('app-name').value;
+      const description = document.getElementById('app-description').value;
+      const link = document.getElementById('app-link').value;
+      const image = document.getElementById('app-image').value;
+      const password = document.getElementById('password').value;
+
+      const generatedHtml = `
+      <div class="app-card">
+        <img src="${image}" alt="App Image">
+        <h3>${name}</h3>
+        <p>${description}</p>
+
+        <form>
+          <label for="password">Enter Password to Download:</label>
+          <input type="password" id="password" required>
+          <button type="submit">Download</button>
+        </form>
+
+        <a href="${link}" download style="display: none;">Click to download</a>
+      </div>`;
+
+      document.getElementById('htmlOutput').textContent = generatedHtml;
+    }
+  </script>
 </body>
 </html>
