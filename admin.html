@@ -1,72 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - Munir Soft Zone</title>
-  <link rel="stylesheet" href="public/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add New App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Admin Panel - Munir Soft Zone</h1>
-  </header>
+    <h1>Add New App</h1>
+    <form id="app-form">
+        <label for="app-name">App Name:</label>
+        <input type="text" id="app-name" required><br><br>
 
-  <section class="admin-form">
-    <h2>Upload New App</h2>
-    <form>
-      <label for="app-name">App Name:</label>
-      <input type="text" id="app-name" placeholder="App name" required>
+        <label for="app-image">App Image URL:</label>
+        <input type="text" id="app-image" required><br><br>
 
-      <label for="app-description">Description:</label>
-      <textarea id="app-description" placeholder="App description" required></textarea>
+        <label for="app-download">Download URL:</label>
+        <input type="text" id="app-download" required><br><br>
 
-      <label for="app-link">App Link:</label>
-      <input type="url" id="app-link" placeholder="App download link" required>
-
-      <label for="app-image">Image URL:</label>
-      <input type="url" id="app-image" placeholder="App image URL" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" placeholder="Password for download" required>
-
-      <button type="button" onclick="submitForm()">Generate HTML</button>
+        <button type="submit">Add App</button>
     </form>
 
-    <div id="generatedHtml" style="margin-top: 20px;">
-      <h3>Generated HTML</h3>
-      <pre id="htmlOutput"></pre>
-    </div>
-  </section>
-  
-  <footer>
-    <p>© 2024 Munir Soft Zone. Admin Panel.</p>
-  </footer>
-
-  <script>
-    function submitForm() {
-      const name = document.getElementById('app-name').value;
-      const description = document.getElementById('app-description').value;
-      const link = document.getElementById('app-link').value;
-      const image = document.getElementById('app-image').value;
-      const password = document.getElementById('password').value;
-
-      const generatedHtml = `
-      <div class="app-card">
-        <img src="${image}" alt="App Image">
-        <h3>${name}</h3>
-        <p>${description}</p>
-
-        <form>
-          <label for="password">Enter Password to Download:</label>
-          <input type="password" id="password" required>
-          <button type="submit">Download</button>
-        </form>
-
-        <a href="${link}" download style="display: none;">Click to download</a>
-      </div>`;
-
-      document.getElementById('htmlOutput').textContent = generatedHtml;
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
