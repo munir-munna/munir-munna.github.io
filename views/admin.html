@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Munir Soft Zone</title>
+  <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Panel - Munir Soft Zone</h1>
+  </header>
+
+  <section class="admin-form">
+    <h2>Upload New App</h2>
+    <form action="/admin" method="POST">
+      <label for="app-name">App Name:</label>
+      <input type="text" id="app-name" name="name" required>
+
+      <label for="app-description">Description:</label>
+      <textarea id="app-description" name="description" required></textarea>
+
+      <label for="app-link">App Link:</label>
+      <input type="url" id="app-link" name="link" required>
+
+      <label for="app-image">Image URL:</label>
+      <input type="url" id="app-image" name="image" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Upload App</button>
+    </form>
+  </section>
+  
+  <footer>
+    <p>© 2024 Munir Soft Zone. Admin Panel.</p>
+  </footer>
+</body>
+</html>
