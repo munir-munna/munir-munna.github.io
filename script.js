@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const appList = document.getElementById('app-list');
 
-    fetch('app-data.json')
+    fetch('app-data.txt')
         .then(response => response.json())
         .then(data => {
             data.forEach(app => {
@@ -34,7 +34,7 @@ document.getElementById('app-form')?.addEventListener('submit', function (e) {
         download: appDownload
     };
 
-    fetch('app-data.json')
+    fetch('app-data.txt')
         .then(response => response.json())
         .then(data => {
             data.push(newApp);
