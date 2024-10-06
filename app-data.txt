@@ -1,7 +1,7 @@
 [
     {
         "name": "Sample App",
-        "image": "https://via.placeholder.com/50",
+        "image": "https://pikachu-tools.my.id/public/logo.png",
         "download": "https://example.com/sample-app"
     }
 ]
