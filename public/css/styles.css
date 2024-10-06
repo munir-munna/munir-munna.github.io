@@ -21,31 +21,22 @@ header h1 {
   font-size: 2em;
 }
 
-header p {
-  font-size: 1.2em;
-}
-
 footer {
   text-align: center;
   padding: 10px;
   background-color: #333;
   color: #fff;
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
 }
 
-.app-section, .admin-form, .download-section {
+.app-section {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.app-section h2, .admin-form h2, .download-section h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
 }
 
 .app-card {
@@ -61,31 +52,13 @@ footer {
   object-fit: cover;
 }
 
-.app-card h3 {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-.app-card form {
-  margin-top: 10px;
-}
-
-input, textarea, button {
+button, input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-button {
-  background-color: #333;
-  color: #fff;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
 }
 
 .download-btn {
